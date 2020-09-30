@@ -52,5 +52,4 @@ jobs:
           mysql version: latest # optional, default is latest
           # MYSQL_DATABASE - name for the default database that is created
           mysql database: sample
-          mysql root user: root
-          mysql root password: ""
+          mysql root password: ${{ secrets.RootPassword }}
