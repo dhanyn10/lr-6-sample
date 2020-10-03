@@ -48,8 +48,6 @@ jobs:
           character set server: utf8mb4 # optional, default is utf8mb4
           # --collation-server - The character collation of MySQL server
           collation server: utf8mb4_general_ci # optional, default is utf8mb4_general_ci
-          # Version of MySQL to use
-          mysql version: latest # optional, default is latest
-          # MYSQL_DATABASE - name for the default database that is created
           mysql database: sample
-          mysql root password: ${{ secrets.RootPassword }}
+          mysql root user: root
+          mysql allow empty password: yes
