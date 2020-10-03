@@ -30,3 +30,24 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+
+  mysql-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup MySQL
+        # You may pin to the exact commit or the version.
+        # uses: mirromutth/mysql-action@de1fba8b3f90ce8db80f663a7043be3cf3231248
+        uses: mirromutth/mysql-action@v1.1
+        with:
+          # The port of host
+          host port: 3306 # optional, default is 3306
+          # The port of container
+          container port: 3306 # optional, default is 3306
+          # --character-set-server - The character set of MySQL server
+          character set server: utf8mb4 # optional, default is utf8mb4
+          # --collation-server - The character collation of MySQL server
+          collation server: utf8mb4_general_ci # optional, default is utf8mb4_general_ci
+          mysql database: sample
+          mysql root user: root
+          mysql allow empty password: yes
